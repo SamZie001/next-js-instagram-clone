@@ -1,9 +1,16 @@
-import React from 'react'
+import layoutStyles from "../styles/Layout.module.css";
+import React from "react";
+import Sidebar from "./Sidebar";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>Layout</div>
-  )
-}
+    <div className={layoutStyles.layout}>
+      <Sidebar />
+      {React.Children.map(children, (child) => {
+        return React.cloneElement(child, { className: layoutStyles.child });
+      })}
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

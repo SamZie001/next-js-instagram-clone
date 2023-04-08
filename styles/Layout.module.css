@@ -1,0 +1,6 @@
+.layout {
+  display: flex;
+}
+.child {
+  padding-top:50px;
+}

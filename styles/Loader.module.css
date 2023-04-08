@@ -1,0 +1,11 @@
+.load-container{
+  border: 1px solid black;
+  height: 7px;
+}
+.slider{
+  width: 200px;
+  height: 100%;
+  background: red;
+  position: relative;
+  transition: all 0.2s;
+}

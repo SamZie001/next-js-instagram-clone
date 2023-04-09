@@ -1,3 +1,8 @@
+@font-face {
+  font-family: instagramDefault;
+  src: url(../fonts//Fontspring-DEMO-blue_vinyl_regular_ps_ot.otf)
+    format("opentype");
+}
 .sidebar {
   border-right: 1px solid var(--secondary);
   width: 18%;
@@ -42,6 +47,9 @@
 }
 .nav-items h1 {
   margin-bottom: 28px;
+  font-family: instagramDefault;
+  font-weight: lighter;
+  letter-spacing: 1.3px;
 }
 .nav-items h1 i {
   display: none;

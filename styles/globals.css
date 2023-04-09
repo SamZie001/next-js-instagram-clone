@@ -9,6 +9,7 @@
   --primary: #000000;
   --secondary: #121212;
   --text-color: #f5f5f5;
+  --grey-text-color: #a8a8a8;
   --notice-color: #ff3040;
   --link-color: #0095f6;
   --large-text: 16px;
@@ -38,4 +39,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+button{
+  border: none;
 }

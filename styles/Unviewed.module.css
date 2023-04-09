@@ -1,0 +1,18 @@
+.plate {
+  min-width: 54px;
+  max-width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(35deg, #feda75, #fa7e1e, #d62976, #962fbf);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plate img {
+  border: 1.5px solid black;
+  border-radius: 50%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+}

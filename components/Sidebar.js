@@ -40,23 +40,20 @@ const Sidebar = () => {
     showObjects.showSearch = false;
     showObjects.showNotifications = false;
     showObjects.showCreate = false;
-    showObjects.showMore = false
+    showObjects.showMore = false;
+  };
+
+  // Function to close the create page modal from its component/ parent
+  const handleClose = () => {
+    setShowObjects((prev) => (prev.showCreate = false));
   };
 
   // Use effect to manage sideBar width change and icon-only display on component renders
   useEffect(() => {
-    if (
-      showObjects.showSearch ||
-      showObjects.showNotifications ||
-      showObjects.showCreate
-    ) {
+    if (showObjects.showSearch || showObjects.showNotifications) {
       sidebarDOM.current.classList.add(sideStyles.minimize);
     }
-    if (
-      !showObjects.showSearch &&
-      !showObjects.showNotifications &&
-      !showObjects.showCreate
-    ) {
+    if (!showObjects.showSearch && !showObjects.showNotifications) {
       sidebarDOM.current.classList.remove(sideStyles.minimize);
     }
   }, [showObjects, handleClearShowObjects]);
@@ -121,7 +118,7 @@ const Sidebar = () => {
       </nav>
       {showObjects.showSearch && <Search />}
       {showObjects.showNotifications && <Notifications />}
-      {showObjects.showCreate && <Create />}
+      {showObjects.showCreate && <Create handleClose={handleClose} />}
       {showObjects.showMore && <MoreNavItems />}
     </>
   );

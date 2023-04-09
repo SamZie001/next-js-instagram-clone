@@ -39,10 +39,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.nav-component{
-  position: absolute;
-  z-index: 3;
-}
-.active {
-  display: none;
-}

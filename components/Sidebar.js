@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Search from "./Search";
 import Notifications from "./Notifications";
 import Create from "./Create";
+import MoreNavItems from "./MoreNavItems";
 
 const Sidebar = () => {
   const sidebarDOM = useRef();
@@ -34,78 +35,79 @@ const Sidebar = () => {
     }));
   };
 
+  // This function will set all showObject states to false so the side bar can widen
+  const handleClearShowObjects = () => {
+    showObjects.showSearch = false;
+    showObjects.showNotifications = false;
+    showObjects.showCreate = false;
+    showObjects.showMore = false
+  };
+
   // Use effect to manage sideBar width change and icon-only display on component renders
-  // To be updated soon
   useEffect(() => {
     if (
       showObjects.showSearch ||
       showObjects.showNotifications ||
       showObjects.showCreate
     ) {
-      console.log("minimize: ", sidebarDOM.current.classList);
+      sidebarDOM.current.classList.add(sideStyles.minimize);
     }
     if (
       !showObjects.showSearch &&
       !showObjects.showNotifications &&
       !showObjects.showCreate
     ) {
-      console.log("maximize: ", sidebarDOM.current.classList);
+      sidebarDOM.current.classList.remove(sideStyles.minimize);
     }
-  }, [showObjects]);
+  }, [showObjects, handleClearShowObjects]);
 
   return (
     <>
-      <nav className={sideStyles.sidebar} id="sidebar">
-        <ul className={sideStyles["nav-items"]} ref={sidebarDOM}>
-          <h1>
-            <Link href="/">Instagram</Link>
-          </h1>
-          <Link href="/">
+      <nav className={sideStyles.sidebar} ref={sidebarDOM}>
+        <ul className={sideStyles["nav-items"]}>
+          <Link href="/" onClick={handleClearShowObjects}>
+            <h1>
+              <i className="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </h1>
+          </Link>
+          <Link href="/" onClick={handleClearShowObjects}>
             <li>
               <i className="fa-solid fa-house"></i>
               <span>Home</span>
             </li>
           </Link>
-          <li
-            onClick={() => toggleShowObjects("Search")}
-            // ref={(el) => (elementRefs.current[0] = el)}
-          >
+          <li onClick={() => toggleShowObjects("Search")}>
             <i className="fa-solid fa-magnifying-glass"></i>
             <span>Search</span>
           </li>
-          <Link href="/explore">
+          <Link href="/explore" onClick={handleClearShowObjects}>
             <li>
               <i className="fa-regular fa-compass"></i>
               <span>Explore</span>
             </li>
           </Link>
-          <Link href="/reels">
+          <Link href="/reels" onClick={handleClearShowObjects}>
             <li>
               <i className="fa-solid fa-film"></i>
               <span>Reels</span>
             </li>
           </Link>
-          <Link href="/inbox">
+          <Link href="/inbox" onClick={handleClearShowObjects}>
             <li>
               <i className="fa-sharp fa-solid fa-comment-dots"></i>
               <span>Messages</span>
             </li>
           </Link>
-          <li
-            onClick={() => toggleShowObjects("Notifications")}
-            // ref={(el) => (elementRefs.current[1] = el)}
-          >
+          <li onClick={() => toggleShowObjects("Notifications")}>
             <i className="fa-regular fa-heart"></i>
             <span>Notifications</span>
           </li>
-          <li
-            onClick={() => toggleShowObjects("Create")}
-            // ref={(el) => (elementRefs.current[2] = el)}
-          >
+          <li onClick={() => toggleShowObjects("Create")}>
             <i className="fa-regular fa-square-plus"></i>
             <span>Create</span>
           </li>
-          <Link href="/profile">
+          <Link href="/profile" onClick={handleClearShowObjects}>
             <li>
               <i className="fa-solid fa-circle-user"></i>
               <span>Profile</span>
@@ -120,7 +122,7 @@ const Sidebar = () => {
       {showObjects.showSearch && <Search />}
       {showObjects.showNotifications && <Notifications />}
       {showObjects.showCreate && <Create />}
-      {/* {showObjects.showMore && <p>MshowMore</p>} */}
+      {showObjects.showMore && <MoreNavItems />}
     </>
   );
 };

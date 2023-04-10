@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  margin-top: 30px;
+  color: var(--grey-text-color);
+}
+.footer ul {
+  font-size: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.footer ul li {
+  cursor: pointer;
+  padding-bottom: 8px;
+  padding-right: 2px;
+}
+.footer ul li:hover {
+  text-decoration: 1px solid underline;
+}
+.footer p {
+  font-size: var(--medium-text);
+}

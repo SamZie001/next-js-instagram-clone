@@ -1,0 +1,95 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: auto;
+}
+.home img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.feed {
+  width: 65%;
+  /* border: 2px solid red; */
+}
+.stories {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 7px;
+}
+.story {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+}
+.story p {
+  margin-top: 7px;
+}
+
+.suggestions {
+  padding-right: 8px;
+  width: 31%;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.details span {
+  width: auto;
+  margin-left: -135px;
+}
+.details span strong {
+  text-transform: lowercase;
+}
+.details span p {
+  color: var(--grey-text-color);
+  padding-top: 3px;
+  letter-spacing: 0.5px;
+}
+.details a {
+  color: #0095f6;
+  font-weight: bolder;
+  font-size: 12px;
+}
+.see-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  color: var(--grey-text-color);
+  font-size: 12px;
+}
+.see-more a {
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.sug-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.sug-details span {
+  width: 70%;
+}
+.sug-details span strong {
+  text-transform: lowercase;
+}
+.sug-details span p {
+  color: var(--grey-text-color);
+  padding-top: 3px;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+}
+.sug-details a {
+  color: #0095f6;
+  font-weight: bolder;
+  font-size: 12px;
+}

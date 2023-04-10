@@ -49,7 +49,7 @@ const Notifications = () => {
       <div className={notificationStyles.sorter}>
         <h3>Yesterday</h3>
         <div className={notificationStyles.details}>
-          <Unviewed imageSource={notification[0].image} />
+          <Unviewed imageSource={notification[0].image} compWidth={'54px'}/>
           <p>
             {notification[0].info}. <span>{notification[0].timeline}</span>
           </p>
@@ -60,7 +60,7 @@ const Notifications = () => {
         <h3>This Week</h3>
         {section2.map((item, index) => (
           <div className={notificationStyles.details} key={index}>
-            <Unviewed imageSource={item.image} />
+            <Unviewed imageSource={item.image} compWidth={'54px'}/>
             <p>
               {item.info}. <span>{item.timeline}</span>
             </p>
@@ -74,7 +74,7 @@ const Notifications = () => {
         <h3>This Month</h3>
         {section3.map((item, index) => (
           <div className={notificationStyles.details} key={index}>
-            <Unviewed imageSource={item.image} />
+            <Unviewed imageSource={item.image} compWidth={'54px'}/>
             <p>
               {item.info}. <span>{item.timeline}</span>
             </p>

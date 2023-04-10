@@ -99,6 +99,7 @@ const Sidebar = () => {
           <li onClick={() => toggleShowObjects("Notifications")}>
             <i className="fa-regular fa-heart"></i>
             <span>Notifications</span>
+            <div className={sideStyles.notice}></div>
           </li>
           <li onClick={() => toggleShowObjects("Create")}>
             <i className="fa-regular fa-square-plus"></i>

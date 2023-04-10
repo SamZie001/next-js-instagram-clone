@@ -2,6 +2,9 @@
   display: flex;
 }
 .child {
-  padding-top:50px;
-  width: auto;
+  right: 0;
+  position: fixed;
+  padding-top: 50px;
+  width: 82%;
+  height: 100%;
 }

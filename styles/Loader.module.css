@@ -5,37 +5,35 @@
 /* --gradient-blue: #4f5bd5;  */
 
 .load-container {
+  width: 100%;
   top: 0;
   left: 0;
+  position: fixed;
   height: 3.5px;
   background: var(--primary);
 }
 .slider {
-  width: 0%;
+  width: 100%;
+  background: #962fbf;
   height: 100%;
   position: relative;
-  animation: slide 5s alternate-reverse forwards ease-in-out infinite;
+  animation: slide 0.9s alternate-reverse forwards ease-in-out infinite;
 }
 
 @keyframes slide {
   20% {
     background: #962fbf;
-    width: 20%;
   }
   25% {
     background: #4f5bd5;
-    width: 25%;
   }
   50% {
     background: #d62976;
-    width: 50%;
   }
   75% {
     background: #fa7e1e;
-    width: 75%;
   }
   100% {
     background: #feda75;
-    width: 100%;
   }
 }

@@ -8,81 +8,11 @@ import Unviewed from "@/components/Unviewed";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { suggestionsData, storyData, feedData } from "@/lib/staticdata";
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
   setTimeout(() => setLoader(false), 1000);
-
-  const [suggestionsData] = useState([
-    {
-      name: "nusi",
-      image: undefined,
-      info: "Followed by sashi + 9 more",
-    },
-    {
-      name: "dave_plays",
-      image: "/profile1.png",
-      info: "Followed by ceoGroup1",
-    },
-    {
-      name: "reo_okoli",
-      image: undefined,
-      info: "Followed by sashi + 19 more",
-    },
-    {
-      name: "elephantgate",
-      image: "/profile4.jpg",
-      info: "Followed by HBO + 1 more",
-    },
-    {
-      name: "b_breadStores_ng",
-      image: "/profile5.jpg",
-      info: "Followed by insta_blog + 24 more",
-    },
-  ]);
-  const [storyData] = useState([
-    {
-      image: "/profile1.png",
-      name: "nifebimbo",
-    },
-    {
-      image: "/profile2.jpg",
-      name: "joyyyeeee",
-    },
-    {
-      image: "/profile8.png",
-      name: "js_hub",
-    },
-    {
-      image: "/profile3.png",
-      name: "feyi0",
-    },
-    {
-      image: "/profile4.jpg",
-      name: "cello",
-    },
-    {
-      image: "/profile10.jpg",
-      name: "ai_merchant",
-    },
-    {
-      image: "/profile5.jpg",
-      name: "xander.szn",
-    },
-    {
-      image: "/profile6.jpg",
-      name: "hbo_fanpage",
-    },
-    {
-      image: "/profile7.jpg",
-      name: "nexttrends",
-    },
-    {
-      image: "/profile9.jpg",
-      name: "css3_tips",
-    },
-  ]);
-
   return (
     <>
       <Meta />
@@ -93,19 +23,84 @@ export default function Home() {
           {/* Feed */}
           <div className={styles.feed}>
             <div className={styles.stories}>
-              {storyData.slice(0,8).map((story, index) => (
+              {storyData.slice(0, 8).map((story, index) => (
                 <div key={index} className={styles.story}>
-                  <Unviewed imageSource={story.image} compWidth={66}/>
-                  <p>{story.name.length>=12 ?`${story.name.slice(0,9)}...`: story.name}</p>
+                  <Unviewed imageSource={story.image} compWidth={66} />
+                  <p>
+                    {story.name.length >= 12
+                      ? `${story.name.slice(0, 9)}...`
+                      : story.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className={styles.posts}>
+              {feedData.map((post, index) => (
+                <div key={index} className={styles["single-post"]}>
+                  <div className={styles["post-top"]}>
+                    <div className={styles.left}>
+                      <Unviewed imageSource={post.image} compWidth={42} />
+                      <p>
+                        <strong>{post.name}</strong>
+                        {post.verified && <i class="fa fa-check-circle"></i>}
+                        <span>
+                          <i class="fa-solid fa-period">.</i>
+                          <span> {post.timeline}</span>
+                        </span>
+                      </p>
+                    </div>
+                    <div className={styles.right}>
+                      <i className="fa-solid fa-ellipsis"></i>
+                    </div>
+                  </div>
+
+                  <div className={styles["post-main"]}>
+                    {post.contentSrc.endsWith(".mp4") && (
+                      <video src={post.contentSrc} controls></video>
+                    )}
+                    {post.contentSrc.endsWith(".jpg") && (
+                      <Image
+                        src={post.contentSrc}
+                        width={100}
+                        height={100}
+                        alt="post-content"
+                        priority
+                      />
+                    )}
+                  </div>
+
+                  <div className={styles["post-interact"]}>
+                    <div className={styles.left}>
+                      <i className="fa-regular fa-heart" id="heart"></i>
+                      <i className="fa-regular fa-comment"></i>
+                      <i class='fa fa-send'></i>
+                    </div>
+                    <div className={styles.right}>
+                      <i className="fa-regular fa-bookmark"></i>
+                    </div>
+                  </div>
+
+                  <div className={styles["post-stats"]}>
+                    <strong>{post.likes} likes</strong>
+                    <p>
+                      <strong>{post.name}</strong>&nbsp;{post.description}
+                    </p>
+                    <span>View all comments</span>
+                    <input type="text" placeholder="Add a comment..." />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-
           {/* Suggestions */}
           <div className={styles.suggestions}>
             <div className={styles.details}>
-              <Image src="/no-profile.png" width={54} height={54} />
+              <Image
+                src="/no-profile.png"
+                width={54}
+                height={54}
+                alt="profile"
+              />
               <span>
                 <strong>JD_J01</strong>
                 <p>John Doe</p>
@@ -124,6 +119,7 @@ export default function Home() {
                   src={det.image ? det.image : "/no-profile.png"}
                   width={40}
                   height={40}
+                  alt="profile"
                 />
                 <span>
                   <strong>{det.name}</strong>
@@ -132,7 +128,6 @@ export default function Home() {
                 <Link href="#">Follow</Link>
               </div>
             ))}
-
             <Footer />
           </div>
         </main>

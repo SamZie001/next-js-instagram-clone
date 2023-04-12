@@ -15,6 +15,7 @@
   --large-text: 16px;
   --medium-text: 12px;
   --dark-grey: rgb(52, 52, 52);
+  --active-now: #78de45;
 }
 
 * {
@@ -41,7 +42,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-button{
+button {
   border: none;
   cursor: pointer;
 }

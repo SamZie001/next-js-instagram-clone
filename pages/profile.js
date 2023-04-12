@@ -8,8 +8,11 @@ import Posts from "@/components/Profile/Posts";
 import Saved from "@/components/Profile/Saved";
 import Tagged from "@/components/Profile/Tagged";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
 
 const profile = () => {
+  const [loader, setLoader] = useState(true);
+  setTimeout(() => setLoader(false), 1000);
   const postDOM = useRef();
   const saveDOM = useRef();
   const tagDOM = useRef();
@@ -49,6 +52,7 @@ const profile = () => {
     <Layout>
       <Meta title={"Jonathan Doe (@john_doe) | Instagram"} />
       <main className={profileStyles.main}>
+        {loader && <Loader />}
         <div className={profileStyles.summary}>
           <div className={profileStyles["profile-picture"]}>
             <Image
@@ -87,11 +91,11 @@ const profile = () => {
             <i className="fa-solid fa-id-card-clip"></i>TAGGED
           </li>
         </ul>
-        {showObjects.showPosts && <Posts/>}
-        {showObjects.showSaved && <Saved/>}
-        {showObjects.showTagged && <Tagged/>}
+        {showObjects.showPosts && <Posts />}
+        {showObjects.showSaved && <Saved />}
+        {showObjects.showTagged && <Tagged />}
       </main>
-      <Footer/>
+      <Footer />
     </Layout>
   );
 };

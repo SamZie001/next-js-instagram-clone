@@ -16,6 +16,9 @@
 .sidebar * {
   transition: all 0.3s;
 }
+.sidebar li:hover i {
+  font-size: 23px;
+}
 
 /* Default sidebar width */
 .nav-items {

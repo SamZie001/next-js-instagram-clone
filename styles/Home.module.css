@@ -116,9 +116,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.post-top i {
-  margin-left: 12px;
-}
 .post-top .right,
 .post-interact .right,
 .post-interact .left {
@@ -159,6 +156,7 @@
   color: var(--grey-text-color);
 }
 .post-stats input {
+  color: var(--text-color);
   outline: none;
   background: transparent;
   border: none;

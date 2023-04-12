@@ -4,8 +4,10 @@
   color: var(--grey-text-color);
 }
 .footer ul {
+  padding: 0 150px;
   font-size: 11px;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
@@ -18,5 +20,6 @@
   text-decoration: 1px solid underline;
 }
 .footer p {
+  text-align: center;
   font-size: var(--medium-text);
 }

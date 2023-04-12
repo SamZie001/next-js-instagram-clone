@@ -42,9 +42,9 @@ export default function Home() {
                       <Unviewed imageSource={post.image} compWidth={42} />
                       <p>
                         <strong>{post.name}</strong>
-                        {post.verified && <i class="fa fa-check-circle"></i>}
+                        {post.verified && <i className="fa fa-check-circle"></i>}
                         <span>
-                          <i class="fa-solid fa-period">.</i>
+                          <i className="fa-solid fa-period">.</i>
                           <span> {post.timeline}</span>
                         </span>
                       </p>
@@ -73,7 +73,7 @@ export default function Home() {
                     <div className={styles.left}>
                       <i className="fa-regular fa-heart" id="heart"></i>
                       <i className="fa-regular fa-comment"></i>
-                      <i class='fa fa-send'></i>
+                      <i className='fa fa-send'></i>
                     </div>
                     <div className={styles.right}>
                       <i className="fa-regular fa-bookmark"></i>

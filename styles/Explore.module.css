@@ -1,0 +1,31 @@
+.container {
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.sub,
+.major {
+  height: 637px;
+  border: 1px solid white;
+}
+.sub {
+  width: 60%;
+}
+.major {
+  width: 40%;
+}
+.sub {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sub img {
+  height: 50%;
+  width: 50%;
+}
+.major img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

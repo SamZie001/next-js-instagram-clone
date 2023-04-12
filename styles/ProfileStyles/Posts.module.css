@@ -1,0 +1,30 @@
+.posts {
+  margin-top: 20px;
+  min-height: 308px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.posts i {
+  margin-bottom: 20px;
+  border: 2px solid var(--dark-grey);
+  padding: 15px;
+  border-radius: 50%;
+  color: var(--dark-grey);
+  font-size: 30px;
+}
+.posts .placeholder {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.posts .info {
+  margin-bottom: 10px;
+}
+.posts a {
+  font-weight: bold;
+  color: var(--link-color);
+}
+.posts a:hover {
+  color: var(--text-color);
+}

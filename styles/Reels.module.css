@@ -1,0 +1,20 @@
+.container {
+  scroll-snap-type: y mandatory;
+  height: 100%;
+  transform: translateY(-20px);
+  margin: 0 auto;
+  margin-left: 70px;
+}
+.video-container {
+  position: relative;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  width: 450px;
+  min-width: 360px;
+  height: 100%;
+  margin: 0 auto;
+  scrollbar-width: none;
+}
+.video-container::-webkit-scrollbar {
+  display: none;
+}

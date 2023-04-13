@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 5;
 }
 .create > i {
   cursor: pointer;
@@ -16,10 +16,12 @@
   font-size: 34px;
 }
 .create-modal {
+  z-index: 4;
   width: 370px;
   height: 420px;
   border-radius: 15px;
   background: #262626;
+  position: absolute;
 }
 .create-modal h4 {
   font-size: var(--large-text);

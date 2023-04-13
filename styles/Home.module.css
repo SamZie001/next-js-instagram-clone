@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   height: 100%;
-  overflow-y: auto;
 }
 .suggestions img {
   border-radius: 50%;
@@ -103,7 +102,7 @@
   min-height: 660px;
   display: block;
   padding: 24px 0;
-  border-bottom: 0.2px solid var(--grey-text-color);
+  border-bottom: 0.2px solid var(--dark-grey);
 }
 .single-post i:hover {
   cursor: pointer;

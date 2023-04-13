@@ -1,9 +1,11 @@
 import footerStyles from "../styles/Footer.module.css";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className={footerStyles.footer}>
-      <ul>
+      <ul className={router.pathname === "/" ? `${footerStyles["footer-flex"]}` : 'null'}>
         <li>About</li>&nbsp;.&nbsp;
         <li>Help</li>&nbsp;.&nbsp;
         <li>Press</li>&nbsp;.&nbsp;

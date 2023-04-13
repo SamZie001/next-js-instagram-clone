@@ -1,5 +1,5 @@
+"use client";
 import layoutStyles from "../styles/Layout.module.css";
-// import React from "react";
 import Sidebar from "./Sidebar";
 
 const Layout = ({ children }) => {

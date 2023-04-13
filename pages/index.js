@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import { suggestionsData, storyData, feedData } from "@/lib/staticdata";
 
 export default function Home() {
+  
   const [loader, setLoader] = useState(true);
   setTimeout(() => setLoader(false), 1000);
   return (
@@ -56,7 +57,7 @@ export default function Home() {
 
                   <div className={styles["post-main"]}>
                     {post.contentSrc.endsWith(".mp4") && (
-                      <video src={post.contentSrc} controls></video>
+                      <video src={post.contentSrc} autoPlay muted ></video>
                     )}
                     {post.contentSrc.endsWith(".jpg") && (
                       <Image

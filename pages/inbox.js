@@ -9,7 +9,6 @@ import Image from "next/image";
 const inbox = () => {
   const [loader, setLoader] = useState(true);
   setTimeout(() => setLoader(false), 1000);
-  console.log(inboxData);
 
   return (
     <Layout>

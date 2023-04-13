@@ -16,9 +16,6 @@
 .sidebar * {
   transition: all 0.3s;
 }
-.sidebar li:hover i {
-  font-size: 23px;
-}
 
 /* Default sidebar width */
 .nav-items {
@@ -33,7 +30,7 @@
 .nav-items li,
 .minimize .nav-items h1 i {
   cursor: pointer;
-  border-radius: 24px;
+  border-radius: 18px;
   padding: 1rem;
 }
 .nav-items li i {

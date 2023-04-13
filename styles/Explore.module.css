@@ -22,7 +22,7 @@
 }
 .sub img {
   max-height: 316px;
-  object-fit: contain;
+  object-fit: cover;
 }
 .main {
   width: 33.3%;

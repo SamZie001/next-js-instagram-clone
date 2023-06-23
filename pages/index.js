@@ -11,7 +11,6 @@ import Footer from "@/components/Footer";
 import { suggestionsData, storyData, feedData } from "@/lib/staticdata";
 
 export default function Home() {
-  
   const [loader, setLoader] = useState(true);
   setTimeout(() => setLoader(false), 1000);
   return (
@@ -43,7 +42,9 @@ export default function Home() {
                       <Unviewed imageSource={post.image} compWidth={42} />
                       <p>
                         <strong>{post.name}</strong>
-                        {post.verified && <i className="fa fa-check-circle"></i>}
+                        {post.verified && (
+                          <i className="fa fa-check-circle"></i>
+                        )}
                         <span>
                           <i className="fa-solid fa-period">.</i>
                           <span> {post.timeline}</span>
@@ -57,13 +58,13 @@ export default function Home() {
 
                   <div className={styles["post-main"]}>
                     {post.contentSrc.endsWith(".mp4") && (
-                      <video src={post.contentSrc} autoPlay muted ></video>
+                      <video src={post.contentSrc} autoPlay muted></video>
                     )}
                     {post.contentSrc.endsWith(".jpg") && (
                       <Image
                         src={post.contentSrc}
-                        width={100}
-                        height={100}
+                        width={1000}
+                        height={1000}
                         alt="post-content"
                         priority
                       />
@@ -74,7 +75,7 @@ export default function Home() {
                     <div className={styles.left}>
                       <i className="fa-regular fa-heart" id="heart"></i>
                       <i className="fa-regular fa-comment"></i>
-                      <i className='fa fa-send'></i>
+                      <i className="fa fa-send"></i>
                     </div>
                     <div className={styles.right}>
                       <i className="fa-regular fa-bookmark"></i>
@@ -93,6 +94,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+
           {/* Suggestions */}
           <div className={styles.suggestions}>
             <div className={styles.details}>

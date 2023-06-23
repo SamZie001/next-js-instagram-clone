@@ -9,7 +9,7 @@ export const PostBrief = ({ imageSrc, likes, comments, bundle, video }) => {
         {video && <i className="fa-solid fa-film"></i>}
       </div>
       <div className={styles.picture}>
-        <Image src={imageSrc} width={100} height={100} alt="post" priority />
+        <Image src={imageSrc} width={500} height={500} alt="post" priority />
         <p className={styles.brief}>
           <span>
             <i className="fa-solid fa-heart"></i> {likes}

@@ -7,7 +7,6 @@ const ReelVideo = ({
   name,
   description,
   likes,
-  comments,
 }) => {
   return (
     <div className={reelStyles["video-card"]}>
@@ -21,7 +20,7 @@ const ReelVideo = ({
       <div className={reelStyles["video-details"]}>
         <div className={reelStyles.flat}>
           <p>
-            <Image src={profilePic} width={32} height={32} alt="profile-pic" />
+            <Image src={profilePic} width={35} height={35} alt="profile-pic" />
             {name} . Follow
           </p>
           <p>{description}</p>

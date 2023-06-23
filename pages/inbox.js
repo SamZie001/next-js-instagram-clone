@@ -28,8 +28,8 @@ const inbox = () => {
                 <li>
                   <Image
                     src={msg.image}
-                    width={56}
-                    height={56}
+                    width={57}
+                    height={57}
                     alt="user-photo"
                   />
                   {msg.info.includes("Active now") && (

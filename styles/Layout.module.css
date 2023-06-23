@@ -10,17 +10,8 @@
   overflow: auto;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 390px) {
   .layout {
-    display: flex;
-    flex-direction: column;
-  }
-  .child {
-    right: 0;
-    position: fixed;
-    padding-top: 50px;
-    width: 82%;
-    height: 100%;
-    overflow: auto;
+    flex-direction: column-reverse;
   }
 }
